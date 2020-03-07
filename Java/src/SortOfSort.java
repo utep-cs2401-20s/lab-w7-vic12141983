@@ -8,22 +8,25 @@ public class SortOfSort {
 
         for (int i = 0; i < arr.length-1; i++) {
            for( int j =0;j<arr.length-1;j++){
-               if(arr[j]>arr[i]&&count==0) {
-                   max = arr[j];
+               // Checking the position of i
+               System.out.print(i+"=i");
+               // Right here im checking the position of i and j to see which is larger and when traced when i=0; in the loop. the position of j
+               // inside the array 2 7 1 3 0 9 6 5
+               // so if j is greater than arr[i]
+               if(arr[i]>arr[j]) {
+               max = arr[i];
+               System.out.print(i+"  "+max+"  ");
                }
-                   //System.out.print(i+"  ");
-                   int temp = arr[i];
-                   arr[i]=arr[j];
-                   arr[j]=temp;
-                  arr[arr.length-1]=arr[arr.length-2];
-                  count++;
-                  R--;
-                 if(count<2){
-                     int temp1 =arr[i];
-                     arr[i] = arr[L];
-                     arr[L] = temp1;
+               if(count<2) {
+                   int temp = arr[L];
+                   arr[L] = arr[i];
+                   arr[i] = temp;
+                   count++;
+                   R--;
+                   L++;
+               }
 
-               }
+
 
 
 
